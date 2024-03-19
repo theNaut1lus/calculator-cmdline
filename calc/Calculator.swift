@@ -65,9 +65,32 @@ class Calculator {
             secondVariable = Int(args[2])!
         }
     }
-    
-    func calculate(args: [String]) -> String {
-        result = 0
-        return(result)
+    // outputs calculation for a single set of (left_number,operator,right_number) from the args array
+    func calculate() -> (value: Int?, position: Int) {
+        
+            var result: Int                                    //returns calculation output and position of result
+            
+        if (op == "/" || op == "%") && self.secondVariable == 0 {    //checks for divide operator or modulus division by zero
+            ErrorHandler(errorTriggered: "div_by_zero", errorString: "").handleError()
+            }
+            
+            switch op {
+            case "+":
+                result = self.firstVariable + self.secondVariable
+            case "-":
+                result = self.firstVariable - self.secondVariable
+            case "x":
+                result = self.firstVariable * self.secondVariable
+            case "/":
+                result = self.firstVariable / self.secondVariable
+            case "%":
+                result = self.firstVariable % self.secondVariable
+            default:
+                result = 0
+                ErrorHandler(errorTriggered: "unknown_operator", errorString: op).handleError()
+                //Handle error for unknown operator provided
+            }
+//            Validate(args: ["\(result)"]).isOutOfBounds()           //out of integer bounds exception handler
+            return (result, startPosition)
     }
 }
