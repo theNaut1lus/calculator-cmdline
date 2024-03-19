@@ -9,7 +9,9 @@
 import Foundation
 
 var args = ProcessInfo.processInfo.arguments
-args.removeFirst() // remove the name of the program
+args.removeFirst()// remove the name of the program
+
+var output: (value: Int?, position: Int) = (0,0)
 
 // Retrieve User Input
 //let no1 = args[0]; // Sample Code Only! Update Required!
