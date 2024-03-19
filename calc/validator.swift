@@ -18,8 +18,14 @@ struct Validator {
             ErrorHandler(errorTriggered: "incomplete_expression", errorString: String(arguments.count)).handleError()
         }
         
-        //if expression only has 1 input, that is not a number.
+        //if expression has non-integers, nil or anything other than integers in positions where integers are required.
+        for i in stride(from: 0, to: arguments.count-2, by: 2) {
+            if Int(arguments[i]) == nil {
+                ErrorHandler(errorTriggered: "invalid_input", errorString: arguments[i]).handleError()
+            }
+        }
         
+        //if expression only has 1 input, that is not a number.
         if(arguments.count == 1 && Int(arguments[0]) == nil) {
             ErrorHandler(errorTriggered: "invalid_input", errorString: arguments[0]).handleError()
         }
