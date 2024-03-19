@@ -52,23 +52,24 @@ class Calculator {
     
     
     func nextStep(arguments: [String]) {
-        while startPosition < args.count-3 && !priorityOperator() {
+        while startPosition < arguments.count-3 && !priorityOperator() {
             startPosition+=2
-            firstVariable = Int(args[startPosition])!
-            op = args[startPosition+1]
-            secondVariable = Int(args[startPosition+2])!
+            firstVariable = Int(arguments[startPosition])!
+            op = arguments[startPosition+1]
+            secondVariable = Int(arguments[startPosition+2])!
         }
-        if startPosition == args.count-3 && !priorityOperator() {  //use the first set in the array if none is found
+        if startPosition == arguments.count-3 && !priorityOperator() {  //use the first set in the array if none is found
             startPosition = 0
-            firstVariable = Int(args[0])!    //firstInt and secondInt are previously unwrapped with 'if let' during initialisation
-            op = args[1]
-            secondVariable = Int(args[2])!
+            firstVariable = Int(arguments[0])!    //firstInt and secondInt are previously unwrapped with 'if let' during initialisation
+            op = arguments[1]
+            secondVariable = Int(arguments[2])!
         }
     }
-    // outputs calculation for a single set of (left_number,operator,right_number) from the args array
+    // outputs calculation for a single set of (left_number,operator,right_number) from the arguments array
+    //returns calculation output and position of result
     func calculate() -> (value: Int?, position: Int) {
         
-            var result: Int                                    //returns calculation output and position of result
+            var result: Int
             
         if (op == "/" || op == "%") && self.secondVariable == 0 {    //checks for divide operator or modulus division by zero
             ErrorHandler(errorTriggered: "div_by_zero", errorString: "").handleError()
@@ -90,7 +91,8 @@ class Calculator {
                 ErrorHandler(errorTriggered: "unknown_operator", errorString: op).handleError()
                 //Handle error for unknown operator provided
             }
-//            Validate(args: ["\(result)"]).isOutOfBounds()           //out of integer bounds exception handler
+        //out of integer bounds exception handler
+        Validator(arguments: ["\(result)"]).checkAgainstMaxValue()
             return (result, startPosition)
     }
 }

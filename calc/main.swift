@@ -8,20 +8,23 @@
 
 import Foundation
 
-var args = ProcessInfo.processInfo.arguments
-args.removeFirst()// remove the name of the program
+var arguments = ProcessInfo.processInfo.arguments
+arguments.removeFirst()// remove the name of the program
 
 var output: (value: Int?, position: Int) = (0,0)
 
-// Retrieve User Input
-//let no1 = args[0]; // Sample Code Only! Update Required!
-//let operator = args[1]; // Sample Code Only! Update Required!
-//let no2 = args[2]; // Sample Code Only! Update Required!
+Validator(arguments: arguments).checkInputValiditity()
 
-// Initialize a Calculator object
-let calculator = Calculator();
+//handle Basic scenario of just 1 number entered. validity already checked above.
+if arguments.count == 1 {
+    print(Int(arguments[0])!)
+}
 
-// Calculate the result
-let result = calculator.add(no1: 1, no2: 1);
 
-print(result)
+if arguments.count > 2 {                                 //process calculation passes for valid arguments until result is achieved
+    while arguments.count > 2 {
+        (output.value, output.position) = Calculator(arguments: arguments).calculate()
+        arguments = UpdateArguments(arguments: arguments, resultValue: output.value, resultPosition: output.position).updateArguments()
+    }
+    print(output.value!)
+}

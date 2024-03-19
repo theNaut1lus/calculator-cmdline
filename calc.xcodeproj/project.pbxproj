@@ -13,6 +13,7 @@
 		05C4D95F1E76182500AB9F52 /* CalcTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C4D95E1E76182500AB9F52 /* CalcTest.swift */; };
 		17B74C6E2BA9430A0072621C /* errorhandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B74C6D2BA9430A0072621C /* errorhandler.swift */; };
 		17B74C702BA946C60072621C /* validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B74C6F2BA946C60072621C /* validator.swift */; };
+		17B74C742BA951670072621C /* updatearguments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B74C732BA951670072621C /* updatearguments.swift */; };
 		3CF665BF24335A1500EC9CF2 /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF665BE24335A1500EC9CF2 /* Calculator.swift */; };
 /* End PBXBuildFile section */
 
@@ -48,6 +49,7 @@
 		05F9F69E1E9DEDD500694D73 /* CalcTest-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CalcTest-Bridging-Header.h"; sourceTree = "<group>"; };
 		17B74C6D2BA9430A0072621C /* errorhandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = errorhandler.swift; sourceTree = "<group>"; };
 		17B74C6F2BA946C60072621C /* validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = validator.swift; sourceTree = "<group>"; };
+		17B74C732BA951670072621C /* updatearguments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = updatearguments.swift; sourceTree = "<group>"; };
 		3CF665BE24335A1500EC9CF2 /* Calculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -85,6 +87,7 @@
 				3CF665BE24335A1500EC9CF2 /* Calculator.swift */,
 				17B74C6D2BA9430A0072621C /* errorhandler.swift */,
 				17B74C6F2BA946C60072621C /* validator.swift */,
+				17B74C732BA951670072621C /* updatearguments.swift */,
 			);
 			path = calc;
 			sourceTree = "<group>";
@@ -213,6 +216,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				17B74C702BA946C60072621C /* validator.swift in Sources */,
+				17B74C742BA951670072621C /* updatearguments.swift in Sources */,
 				054418F62055EFEB008C821B /* main.swift in Sources */,
 				3CF665BF24335A1500EC9CF2 /* Calculator.swift in Sources */,
 				17B74C6E2BA9430A0072621C /* errorhandler.swift in Sources */,

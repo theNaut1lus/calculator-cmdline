@@ -24,4 +24,15 @@ struct Validator {
             ErrorHandler(errorTriggered: "invalid_input", errorString: arguments[0]).handleError()
         }
     }
+    
+    //needed for if the calculated value falls above the max range of an int32 datatype
+    func checkAgainstMaxValue() {
+        for i in stride(from: 0, to: arguments.count, by: 1) {
+            if let integerSize = Int(arguments[i]) {
+                if (integerSize > Int32.max) || (integerSize < Int32.min) {
+                    ErrorHandler(errorTriggered: "int_overflow", errorString: String(integerSize)).handleError()
+                }
+            }
+        }
+    }
 }
