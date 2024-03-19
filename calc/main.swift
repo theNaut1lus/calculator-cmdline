@@ -11,10 +11,10 @@ import Foundation
 var arguments = ProcessInfo.processInfo.arguments
 arguments.removeFirst()// remove the name of the program
 
-var output: (value: Int?, position: Int) = (0,0)
-
 Validator(arguments: arguments).checkInputValiditity() // Checks input validity
 Validator(arguments: arguments).checkAgainstMaxValue() // Checks input ints are not over the max/min size
+
+var output: (value: Int?, position: Int) = (0,0)
 
 //handle Basic scenario of just 1 number entered. validity already checked above.
 if arguments.count == 1 {

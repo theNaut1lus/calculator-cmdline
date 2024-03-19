@@ -91,7 +91,7 @@ class Calculator {
                 ErrorHandler(errorTriggered: "unknown_operator", errorString: op).handleError()
                 //Handle error for unknown operator provided
             }
-        //out of integer bounds exception handler
+        //out of integer bounds validation
         Validator(arguments: ["\(result)"]).checkAgainstMaxValue()
             return (result, startPosition)
     }

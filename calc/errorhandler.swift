@@ -23,7 +23,7 @@ class ErrorHandler {
             print("Invalid number: \(self.errorString)")
             exit(1)
         case "int_overflow":
-            print("Integer Overflow: \(self.errorString) > 9223372036854775807")
+            print("Integer Overflow: \(self.errorString) > \(Int.max)")
             exit(2)
         case "div_by_zero":
             print("Division by zero")

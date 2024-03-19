@@ -35,7 +35,7 @@ struct Validator {
     func checkAgainstMaxValue() {
         for i in stride(from: 0, to: arguments.count, by: 1) {
             if let integerSize = Int(arguments[i]) {
-                if (integerSize > Int32.max) || (integerSize < Int32.min) {
+                if (integerSize > Int.max) || (integerSize < Int.min) {
                     ErrorHandler(errorTriggered: "int_overflow", errorString: String(integerSize)).handleError()
                 }
             }
