@@ -2,8 +2,8 @@
 //  main.swift
 //  calc
 //
-//  Created by Jesse Clark on 12/3/18.
-//  Copyright © 2018 UTS. All rights reserved.
+//  Created by Sidak Singh Aulakh on 19/3/2024.
+//  Copyright © 2024 UTS. All rights reserved.
 //
 
 import Foundation

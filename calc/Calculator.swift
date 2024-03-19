@@ -2,8 +2,8 @@
 //  Calculator.swift
 //  calc
 //
-//  Created by Jacktator on 31/3/20.
-//  Copyright © 2020 UTS. All rights reserved.
+//  Created by Sidak Singh Aulakh on 19/3/2024.
+//  Copyright © 2024 UTS. All rights reserved.
 //
 
 import Foundation
