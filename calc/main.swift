@@ -13,7 +13,8 @@ arguments.removeFirst()// remove the name of the program
 
 var output: (value: Int?, position: Int) = (0,0)
 
-Validator(arguments: arguments).checkInputValiditity()
+Validator(arguments: arguments).checkInputValiditity() // Checks input validity
+Validator(arguments: arguments).checkAgainstMaxValue() // Checks input ints are not over the max/min size
 
 //handle Basic scenario of just 1 number entered. validity already checked above.
 if arguments.count == 1 {
