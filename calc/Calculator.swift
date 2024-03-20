@@ -24,6 +24,7 @@ class Calculator {
             self.firstVariable = unwrappedfirstvalue
         }
         else {
+            ErrorHandler(errorTriggered: "invalid_input", errorString: arguments[startPosition]).handleError()
             exit(1)
         }
         //no need to do an if unwrap here because we handl;e invalid operators in the calculate() function
@@ -34,6 +35,7 @@ class Calculator {
             self.secondVariable = unwrappedsecondvalue
         }
         else {
+            ErrorHandler(errorTriggered: "invalid_input", errorString: arguments[startPosition+2]).handleError()
             exit(1)
         }
         //find the correct (left_number,operator,right_number) set if the current op is not priority operator and setup the calculation step
