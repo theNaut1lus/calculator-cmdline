@@ -10,9 +10,8 @@ import Foundation
 
 class Calculator {
     
-    
     var firstVariable: Int
-    var op: String
+    var op: String //ideally wanted to use the word operator but it is a reserved keyword in swift. so used op instead.
     var secondVariable: Int
     var startPosition = 0
     
@@ -27,7 +26,7 @@ class Calculator {
             ErrorHandler(errorTriggered: "invalid_input", errorString: arguments[startPosition]).handleError()
             exit(1)
         }
-        //no need to do an if unwrap here because we handl;e invalid operators in the calculate() function
+        //no need to do an if unwrap here because we handle invalid operators in the calculate() function
         self.op = arguments[startPosition+1]
         
         //This helps make sure we unwrap the variable into a valid second int
