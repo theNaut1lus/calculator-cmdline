@@ -75,7 +75,7 @@ class Calculator {
     //returns calculation output and position of result
     func calculate() -> (value: Int?, position: Int) {
         
-            var result: Int
+        var result: Int
             
         if (op == "/" || op == "%") && self.secondVariable == 0 {    //checks for divide operator or modulus division by zero
             ErrorHandler(errorTriggered: "div_by_zero", errorString: "").handleError()
@@ -99,6 +99,6 @@ class Calculator {
             }
         //out of integer bounds validation
         Validator(arguments: ["\(result)"]).checkAgainstMaxValue()
-            return (result, startPosition)
+        return (result, startPosition)
     }
 }
