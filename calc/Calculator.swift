@@ -66,7 +66,7 @@ class Calculator {
         }
         if startPosition == arguments.count-3 && !priorityOperator() {  //use the first set in the array if none is found
             startPosition = 0
-            firstVariable = Int(arguments[0])!    //firstInt and secondInt are previously unwrapped with 'if let' during initialisation
+            firstVariable = Int(arguments[0])!
             op = arguments[1]
             secondVariable = Int(arguments[2])!
         }
